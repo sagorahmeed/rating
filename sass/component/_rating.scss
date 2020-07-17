@@ -1,0 +1,113 @@
+
+.main-body{
+    margin-top: 100px;
+
+    &__block{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-flow: wrap;
+
+        
+     & .single-block{
+        width: 25%;
+        height: 106px;
+        box-sizing: border-box;
+        font-size: 50px;
+        border: 1px solid $gray;
+        align-items: center;
+        padding-top: 25px;
+        transition: all .4s ease-in-out;
+        border-right: transparent;
+        position: relative;
+    
+        @include media-breakpoint-down(md){
+            border-right: 1px solid $black;
+            width: 40%;
+        }
+        @include media-breakpoint-down(sm){
+            width: 45%;
+        }
+        @include media-breakpoint-down(xs){
+            width: 50%;
+            height: 130px;
+            padding-top: 50px;
+        }
+    
+        &:hover{
+            background-color: $black;
+            transition: all .4s ease-in-out;
+
+            
+            & .fa-long-arrow-alt-right{
+                visibility: visible;
+                transform: translateX(30px);
+                transition: all .4s ease-in-out;
+                color: $white;
+                  @include media-breakpoint-down(xs){
+                    transform: translateX(20px);
+                 }
+            }
+            & .content{
+                color: $white;
+                &__title{
+                    transform: translateX(-30px);
+                    transition: all .4s ease-in-out;
+                    color: $white;
+    
+                    @include media-breakpoint-down(xs){
+                        transform: translateX(-20px);
+                    }
+                }
+            }
+           
+        }
+        
+        & .content{
+            text-decoration: none;
+            color: $black;
+            &__title{
+                font-size: 17px;
+                margin: 0;
+                text-align: center;
+                transition: all .4s ease-in-out;
+                color: $black;
+                font-family: 'Roboto', sans-serif;
+                
+            &:hover{
+                text-decoration: none;
+            }
+
+                
+               
+                @include media-breakpoint-down(md){
+                    font-size: 15px;
+                }
+                @include media-breakpoint-down(sm){
+                    font-size: 14px;
+                }
+                 @include media-breakpoint-down(xs){
+                    font-size: 12px;
+                }
+            }
+        }
+        &__next-icon {
+            position: absolute;
+            right: 30%;
+            top: 40%;
+            font-size: 18px;
+            opacity: 1;
+            transition: all .4s ease-in-out;
+            color: $white;
+            visibility: hidden;
+            @include media-breakpoint-down(xs){
+                top: 48%;
+            }
+
+         }
+        
+      }  
+    }
+ }
